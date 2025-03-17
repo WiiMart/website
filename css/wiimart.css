@@ -176,4 +176,61 @@ its just font sizes!1!1 i didnt steal!!!
   padding-right:5px;
   margin:2px;
 }
+
+/* staff cards  */
+
+#staffcard {
+  width:480px;
+  height:80px;
+  background: rgb(253,254,255);
+  background: linear-gradient(180deg, rgba(253,254,255,1) 0%, rgba(251,254,255,1) 47%, rgba(242,252,255,1) 100%); 
+  display:inline-block;
+  border-radius:8px;
+  border:1px solid #34BEED;
+  filter: drop-shadow(1px 1px 3.4px #c5c5c5);
+  box-shadow:inset 1px 1px 12px #5454541f;
+  padding:1px;
+  margin:3px;
+}
+#staffcard:hover {
+  outline:3px solid #34BEED;
+}
+#staffprofilephoto {
+  width:105px;
+  max-width:105px;
+  max-height:76px;
+  height:76px;
+  display:inline-block;
+  position:relative;
+  left:-17px;
+  border-radius:8px;
+  background-image:url("/icon/PFP/x.PNG");
+  background-size:cover;
+}
+#stafftitlebarthing {
+  display:inline-block;
+  border:1px solid #34beed;
+  width:100%;
+  position:relative;
+  top:-38px;
+  left:-9px;
+}
+#staffname {
+  color:#323232;
+  font-weight:normal;
+  font-size:17px;
+  position:relative;
+  top:-83px;
+  float:left;
+  left:115px;
+}
+#staffdescription {
+  color:#323232;
+  font-weight:normal;
+  font-size:17px;
+  position:relative;
+  top:-48px;
+  float:left;
+}
+
 /* WiiMart CSS by ChrisplayzWii 2025. */

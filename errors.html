@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WiiMart - Error Code Search</title>
+  <link rel="shortcut icon" href="/icon/WiiMart_star_logo.png" type="image/x-icon">
+  <meta property="og:image" content="/icon/Wiimart_logo_transparent.png" />
+  <meta property="og:image:width" content="80" />
+  <meta property="og:image:height" content="80" />
+  <meta name="description" content="WiiMart is a revival for the defunct Wii Shop Channel. Whether you're an original or a newcomer, it will be fun!">
+  <meta name="keywords" content="Wii Error Codes, Error Code Searcher, Wii Error Code Searcher, Wii Shop Errors, Wii Shop Channel Error">
+  <meta name="author" content="Ocarina">
+  <audio src="/sound/Wii Shop Channel - Loading Sound HD.mp3" id="loadingsound" loop="" preload></audio>
+  <link rel="stylesheet" href="https://wiimart.github.io/css/wiimart.css">
+  <script src="/js/wiimart.js"></script>
+  <link rel="stylesheet" href="https://wiimart.github.io/wiishopscrollbar/wiiscrollbar.css">
+</head>
+<body>
+
+<div id="wiishoploadingicon" style="display:none;"  >
+    <img src="/ring-gray_pinetools.png" style="z-index:4; top:-13px; left:0px;" 
+    id="wiiring" alt="wiishopspinner">
+    <img src="/ring-gray_pinetools.png" style="z-index:3; top:-7px; left:9px;" 
+    id="wiiringshadow" alt="wiishopspinner">
+</div>
+<!-- start of page -->
+<p class="titleofpage">WiiMart</p>
+<p id="dot" class="top">･･････････････････････････････････････････････････････････････････････････････････････････････････････････････････････････････････････････････････････････････････････････････････････････････････････････････････････････････････････････････････････････････････････････････････････････････････････････････････････････････････････</p>
+
+<!-- start of page -->
+<div id="mainpage" style="margin-top:40px;">
+
+<div id="introsection">
+
+  <img src="/icon/Wiimart_logo_transparent.png" style="border-radius:20px; width:120px; height:130px; margin-bottom:-10px;" title="WiiMart logo" alt="WiiMart Logo">
+
+<h2 style="color:#34BEED; font-weight:bold; display:block;">
+      WiiMart Error Code Search</h2>
+
+      <small><p style="color:#323232; font-weight:normal;">Nintendo, if you want us to take this down, please email us at <a href="mailto:wiimartshopping@gmail.com" onclick="keyboardopensound();">wiimartshopping@gmail.com</a> <small><small>(please don't though I love this)</small></small></small></p>
+      
+</div>
+<!-- next section -->
+      <hr>
+
+<div id="errors" style="color:#323232;">
+<h1>Search an Error</h1>
+<input type="text" id="errorCode" placeholder="Enter error code">
+<button onclick="searchError()">Search</button>
+<pre id="result">Result will be displayed here...</pre>
+
+<script>
+    let errorList = {};
+
+    async function loadErrors() {
+        const response = await fetch('/txt/errors.txt');
+        const text = await response.text();
+        parseErrors(text);
+    }
+
+    function parseErrors(text) {
+        text.split('\n').forEach(line => {
+            const match = line.match(/^([\dXx\-]+):\s*(.+)$/);
+            if (match) errorList[match[1].trim()] = match[2].trim();
+        });
+    }
+
+    function matchErrorCode(inputCode) {
+        let results = [];
+        for (let pattern in errorList) {
+            let regex = new RegExp(`^${pattern.replace(/[Xx]/g, '\\d')}$`);
+            if (regex.test(inputCode)) {
+                results.push(errorList[pattern]);
+            }
+        }
+        return results;
+    }
+
+    function searchError() {
+        const input = document.getElementById('errorCode').value.trim();
+        if (!input) return;
+
+        let results = matchErrorCode(input);
+        let resultElement = document.getElementById('result');
+
+        if (results.length === 0) {
+            resultElement.innerText = "No matching error found!";
+        } else if (results.length === 1) {
+            resultElement.innerText = `Result: ${results[0]}`;
+        } else {
+            resultElement.innerText = results.join('\n');
+        }
+    }
+
+    loadErrors();
+</script>
+</div>
+ <br>
+<hr>
+<br>
+
+</div>
+<!-- end of page -->
+<p id="dot" class="bottom">･･････････････････････････････････････････････････････････････････････････････････････････････････････････････････････････････････････････････････････････････････････････････････････････････････････････････････････････････････････････････････････････････････････････････････････････････････････････････････････････････････････</p>
+<br><br>
+<small style="color:#323232; font-weight:normal;">(Pages managed by <a href="https://github.com/LNLenost" onclick="initloading();" target="_blank" >LNLenost</a>, website revamped by <a href="https://github.com/ChrisplayzYT" onclick="initloading();" target="_blank" >ChrisplayzWii</a>.)</small>
+<!-- end of page -->
+</body>
+</html>

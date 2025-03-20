@@ -31,7 +31,8 @@ Install both the WiiMart WAD and the patched IOS WAD (for Wii). Install by going
 
 So far, getting the shop on a blank NAND has been unsuccesful.
 
-
+# Mirror
+This [link](https://mirrors.theerrorexe.dev/wiimart/) will take you to the Wiimart mirror page provided by @TheErrorExe
 
 
 (Pages managed by [LNLenost](https://github.com/LNLenost))

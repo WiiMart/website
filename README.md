@@ -9,7 +9,7 @@ WiiMart is the first ever Wii Shop Channel revival that lasted more than a week 
 You can find its source code here.
 
 # Download
-The cIOSes are [here](https://wiimart.github.io/cIOS/) while WiiMart's WAD [here](https://wiimart.github.io/wad/).
+The cIOS for Wii is [here](https://lnlenost.github.io/various-stuff/wiimart/IOS56(Wii).wad) while the cIOS for Wii U is [here](https://lnlenost.github.io/various-stuff/wiimart/IOS56(vWii).wad).  You can find WiiMart's WAD [here](https://lnlenost.github.io/various-stuff/wiimart/WiiMart.wad).
 In the meantime, [join the Discord!](https://dsc.gg/WiiMart)
 
 # Installation

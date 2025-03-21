@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WiiMart</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(45deg, #1e3c72, #2a5298);
+            color: #fff;
+            font-family: 'Press Start 2P', cursive;
+            text-align: center;
+            padding: 20px;
+        }
+        .logo {
+            width: 128px;
+            height: 128px;
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            animation: spin 5s linear infinite;
+        }
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 15px;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+        }
+        a {
+            color: #ffcc00;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        a:hover {
+            color: #ff6600;
+        }
+        .section {
+            margin-top: 20px;
+            padding: 15px;
+            border: 2px dashed #fff;
+            animation: glow 2s infinite alternate;
+        }
+        @keyframes glow {
+            from { box-shadow: 0 0 10px #ffcc00; }
+            to { box-shadow: 0 0 20px #ff6600; }
+        }
+    </style>
+</head>
+<body>
+    <img src="WiiMart_star_logo.png" alt="WiiMart's logo" class="logo" />
+    <div class="container">
+        <h1>WiiMart: a working, active WSC revival</h1>
+        <p>Nintendo, if you want me to take this down, please email me at <a href="mailto:wiimartshopping@gmail.com">wiimartshopping@gmail.com</a></p>
+        <p>(please don't though I love this)</p>
+
+        <div class="section">
+            <h2>Download</h2>
+            <p><a href="https://wiimart.github.io/cIOS/">cIOSes</a> | <a href="https://wiimart.github.io/wad/">WiiMart's WAD</a></p>
+            <p><a href="https://dsc.gg/WiiMart">Join the Discord!</a></p>
+        </div>
+
+        <div class="section">
+            <h2>Installation</h2>
+            <h3>Console</h3>
+            <p>Download the WiiMart WAD and the patched IOS WAD for your console type (Wii/vWii). We recommend <a href="https://oscwii.org/library/app/yawmME">YAWMME</a> for installing WADs.</p>
+            <p><strong>vWii is the Wii U's Wii Mode</strong></p>
+            <p>If errors like <code>-1022</code> or <code>-1029</code> appear, uninstall the existing title first.</p>
+
+            <h3>Dolphin</h3>
+            <p><strong>For those with Wii NAND backups</strong></p>
+            <p>Install both the WiiMart WAD and the patched IOS WAD via Dolphin's <code>Tools > Install WAD</code> option.</p>
+            <p><strong>For those without Wii NAND backups</strong></p>
+            <p>Currently, getting the shop on a blank NAND has been unsuccessful.</p>
+        </div>
+
+        <p>Pages managed by <a href="https://github.com/LNLenost">LNLenost</a></p>
+    </div>
+</body>
+</html>

@@ -1,5 +1,5 @@
-# cIOS list
-Here you can find the cIOSes for your console.
+# IOS list
+Here you can find the IOSes for your console.
 
 [Wii](https://wiimart.github.io/cIOS/IOS56(Wii).wad)
 
